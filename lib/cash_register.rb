@@ -14,14 +14,15 @@ class CashRegister
     quantity.times {@@total_items << title}
   end 
   
-  def apply_discount 
-    new_total = @total - (@total * (@discount.to_f / 100)).to_i
-    if new_total == 0
-      "There is no discount to apply"
-    else 
-      "After the discount, the total comes to #{new_total}."
-    end 
-  end 
+  def apply_discount
+    discounted_total = (@total *= (1-(@discount.to_f/100))).to_i
+    #1000 * .20 = 800
+    if discounted_total == 0 
+      "There is no discount to apply."
+    else
+      "After the discount, the total comes to $#{discounted_total}."
+    end
+  end
   
   def items 
     @@total_items 
