@@ -15,7 +15,7 @@ class CashRegister
   end 
   
   def apply_discount 
-    new_total = @total *= (1-(@discount.to_f/100))).to_i
+    new_total = @total *= (1-(@discount.to_f/100)).to_i
     if new_total == 0
       "There is no discount to apply"
     else 
