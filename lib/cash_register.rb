@@ -19,6 +19,7 @@ class CashRegister
     if new_total == @total
       "There is no discount to apply"
     else 
+      @total = new_total
       "After the discount, the total comes to $#{new_total}."
     end 
   end 
